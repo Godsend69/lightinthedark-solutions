@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Transparent pricing for life advisory services by Cyrus Nash. Monthly, annual, and lifetime plans. Stripe-secured payments.">
+<title>Pricing · Light in the Dark Solutions</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .save-badge {
+    display:none;
+    font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+    background:rgba(200,146,58,0.15);border:1px solid var(--border-lt);color:var(--gold);
+    padding:0.2rem 0.7rem;margin-left:0.5rem;vertical-align:middle;
+  }
+</style>
+</head>
+<body>
+<!-- STRIPE CONFIGURATION — Replace with your actual Stripe Payment Links -->
+<script>
+window.STRIPE_LINKS = {
+  spark_monthly:   'YOUR_STRIPE_PAYMENT_LINK_SPARK_MONTHLY',
+  spark_annual:    'YOUR_STRIPE_PAYMENT_LINK_SPARK_ANNUAL',
+  flame_monthly:   'YOUR_STRIPE_PAYMENT_LINK_FLAME_MONTHLY',
+  flame_annual:    'YOUR_STRIPE_PAYMENT_LINK_FLAME_ANNUAL',
+  torch_lifetime:  'YOUR_STRIPE_PAYMENT_LINK_TORCH_LIFETIME',
+  soul_mapping:    'YOUR_STRIPE_PAYMENT_LINK_SOUL_MAPPING',
+  crisis_light:    'YOUR_STRIPE_PAYMENT_LINK_CRISIS_LIGHT',
+  group_circle:    'YOUR_STRIPE_PAYMENT_LINK_GROUP_CIRCLE',
+};
+</script>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Light in the Dark</a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="about.html#story">My Story<span class="dd-sub">Who is Cyrus Nash</span></a>
+        <a href="about.html#philosophy">Philosophy<span class="dd-sub">Light · Darkness · Will</span></a>
+        <a href="about.html#life-project">L.I.F.E. Project<span class="dd-sub">The humanitarian vision</span></a>
+      </div>
+    </li>
+    <li><a href="services.html">Services <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="services.html#soul-mapping">Soul Mapping<span class="dd-sub">One-on-one deep consultation</span></a>
+        <a href="services.html#sovereign-path">The Sovereign Path<span class="dd-sub">Monthly coaching program</span></a>
+        <a href="services.html#crisis-light">Crisis Light<span class="dd-sub">Emergency 48hr advisory</span></a>
+        <a href="services.html#life-architecture">Life Architecture<span class="dd-sub">12-week intensive</span></a>
+        <a href="services.html#group">Group Circle<span class="dd-sub">Collective transformation</span></a>
+      </div>
+    </li>
+    <li><a href="resources.html">Resources <span class="arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="blog.html">Articles & Essays<span class="dd-sub">Writings from the dark</span></a>
+        <a href="resources.html#downloads">Free Downloads<span class="dd-sub">Guides & reflections</span></a>
+        <a href="resources.html#newsletter">Newsletter<span class="dd-sub">Letters of Light</span></a>
+      </div>
+    </li>
+    <li><a href="pricing.html" class="active">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="pricing.html" class="nav-cta">Begin Now</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a><a href="about.html">About</a>
+  <a href="services.html">Services</a><a href="blog.html">Articles</a>
+  <a href="resources.html">Resources</a><a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <p class="label">Transparent Investment</p>
+  <h1>Choose Your <em>Path</em></h1>
+  <p>No hidden fees. No upsells. The price you see is what you pay — in exchange for work that is fully committed to your transformation.</p>
+</div>
+<hr class="divider">
+
+<!-- ── BILLING TOGGLE ── -->
+<section class="section">
+  <div class="section-inner" style="padding-bottom:0;">
+    <div class="price-toggle">
+      <label class="label-monthly" id="lbl-monthly">Monthly</label>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <label class="label-annual" id="lbl-annual">Annual <span class="save-badge" style="display:inline-block;">Save 17%</span></label>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- SPARK -->
+      <div class="price-card">
+        <div class="price-name">The Spark</div>
+        <div class="price-tagline">For those taking the first step</div>
+        <div data-monthly style="display:block;">
+          <div class="price-amount"><sup>€</sup>47<sub>/mo</sub></div>
+          <div class="price-period">per month · cancel anytime</div>
+        </div>
+        <div data-annual style="display:none;">
+          <div class="price-amount"><sup>€</sup>470<sub>/yr</sub></div>
+          <div class="price-period">per year · billed annually</div>
+        </div>
+        <ul class="price-features">
+          <li>2 sessions per month (60 min each)</li>
+          <li>Email support between sessions</li>
+          <li>Monthly clarity summary</li>
+          <li>Access to Group Circle</li>
+          <li>All written resources & guides</li>
+          <li class="muted">Priority response (Flame only)</li>
+          <li class="muted">Life Architecture access (Torch only)</li>
+        </ul>
+        <div class="price-divider"></div>
+        <button onclick="openStripeCheckout('spark_monthly')" class="btn btn-outline" style="width:100%;justify-content:center;cursor:pointer;">Begin with The Spark</button>
+        <div class="price-note">Secure payment via Stripe · Cancel anytime</div>
+      </div>
+
+      <!-- FLAME (FEATURED) -->
+      <div class="price-card featured">
+        <div class="price-name">The Flame</div>
+        <div class="price-tagline">The deep, sustained journey</div>
+        <div data-monthly style="display:block;">
+          <div class="price-amount"><sup>€</sup>147<sub>/mo</sub></div>
+          <div class="price-period">per month · cancel anytime</div>
+        </div>
+        <div data-annual style="display:none;">
+          <div class="price-amount"><sup>€</sup>1,470<sub>/yr</sub></div>
+          <div class="price-period">per year · billed annually</div>
+        </div>
+        <ul class="price-features">
+          <li>4 sessions per month (60 min each)</li>
+          <li><strong>Unlimited</strong> messaging support</li>
+          <li>Weekly progress mapping</li>
+          <li>Priority 24hr response</li>
+          <li>Full access to all resources</li>
+          <li>Group Circle included</li>
+          <li class="muted">Life Architecture access (Torch only)</li>
+        </ul>
+        <div class="price-divider"></div>
+        <button onclick="openStripeCheckout('flame_monthly')" class="btn btn-gold" style="width:100%;justify-content:center;cursor:pointer;">Begin with The Flame</button>
+        <div class="price-note">Secure payment via Stripe · Cancel anytime</div>
+      </div>
+
+      <!-- TORCH -->
+      <div class="price-card">
+        <div class="price-name">The Torch Bearer</div>
+        <div class="price-tagline">Everything. Forever.</div>
+        <div data-monthly style="display:block;">
+          <div class="price-amount"><sup>€</sup>2,970</div>
+          <div class="price-period">one-time · lifetime access</div>
+        </div>
+        <div data-annual style="display:none;">
+          <div class="price-amount"><sup>€</sup>2,970</div>
+          <div class="price-period">one-time · lifetime access</div>
+        </div>
+        <ul class="price-features">
+          <li>Unlimited sessions — forever</li>
+          <li>Unlimited priority messaging</li>
+          <li>Life Architecture program (12 weeks)</li>
+          <li>Personal direct contact number</li>
+          <li>All future resources & programs</li>
+          <li>Crisis Light included (unlimited)</li>
+          <li>Legacy client status</li>
+        </ul>
+        <div class="price-divider"></div>
+        <button onclick="openStripeCheckout('torch_lifetime')" class="btn btn-outline" style="width:100%;justify-content:center;cursor:pointer;">Become a Torch Bearer</button>
+        <div class="price-note">Secure payment via Stripe · One time · Forever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SINGLE SESSION PRICING ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-head centered reveal">
+      <p class="label">Single Sessions</p>
+      <h2>Not Ready for a Plan? <em>Start Here.</em></h2>
+      <p class="section-subtitle">Every journey can begin with a single step. These are individual sessions you can book without any subscription.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:1rem;">
+      <div class="reveal" style="background:var(--bg3);border:1px solid var(--border);padding:2.5rem;text-align:center;">
+        <div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem;">Soul Mapping</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--cream);line-height:1;margin-bottom:0.3rem;">€97</div>
+        <div style="font-size:0.85rem;color:var(--cream-dim);margin-bottom:1.5rem;">90-minute deep session</div>
+        <p style="font-size:0.92rem;color:var(--cream-dim);line-height:1.7;margin-bottom:2rem;">A single session of deep mapping — where you are, where you've been, and where your path lies.</p>
+        <button onclick="openStripeCheckout('soul_mapping')" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;cursor:pointer;">Book Session</button>
+      </div>
+      <div class="reveal reveal-delay-1" style="background:var(--bg3);border:1px solid var(--border);border-top:3px solid #9e2a1e;padding:2.5rem;text-align:center;">
+        <div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.25em;color:#e07060;text-transform:uppercase;margin-bottom:0.8rem;">Crisis Light</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--cream);line-height:1;margin-bottom:0.3rem;">€197</div>
+        <div style="font-size:0.85rem;color:var(--cream-dim);margin-bottom:1.5rem;">2-hour emergency session</div>
+        <p style="font-size:0.92rem;color:var(--cream-dim);line-height:1.7;margin-bottom:2rem;">48-hour guaranteed response. Emergency session with immediate action plan for crisis situations.</p>
+        <button onclick="openStripeCheckout('crisis_light')" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;cursor:pointer;border-color:rgba(192,57,43,0.4);color:#e07060;">Request Emergency Support</button>
+      </div>
+      <div class="reveal reveal-delay-2" style="background:var(--bg3);border:1px solid var(--border);padding:2.5rem;text-align:center;">
+        <div style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:0.8rem;">Group Circle</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--cream);line-height:1;margin-bottom:0.3rem;">€47</div>
+        <div style="font-size:0.85rem;color:var(--cream-dim);margin-bottom:1.5rem;">per month</div>
+        <p style="font-size:0.92rem;color:var(--cream-dim);line-height:1.7;margin-bottom:2rem;">Monthly 2-hour group session. Maximum 8 participants. Collective transformation at an accessible price.</p>
+        <button onclick="openStripeCheckout('group_circle')" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;cursor:pointer;">Join the Circle</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section">
+  <div class="section-inner-sm">
+    <div class="section-head centered reveal">
+      <p class="label">Questions</p>
+      <h2>Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div style="margin-top:1rem;">
+      <div class="faq-item reveal">
+        <button class="faq-question">How do I know which plan is right for me? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The simplest answer: book a free 30-minute consultation first. I'll assess your situation honestly and tell you which service — if any — genuinely fits. If none of my services are right for you, I will tell you that too. I don't take clients I cannot serve.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Are sessions conducted in English or Greek? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Both. I work with clients in both English and Greek — whichever language allows you to express yourself most fully and honestly. In my experience, the language of the heart matters more than any other consideration in this work.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Can I cancel my subscription at any time? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Monthly plans can be cancelled at any time with no penalty. Your access continues until the end of the paid period. I believe in earning your continued investment — not trapping you in it.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">What payment methods are accepted? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">All payments are processed securely through Stripe. We accept all major credit and debit cards (Visa, Mastercard, American Express), as well as Apple Pay and Google Pay where available. All transactions are encrypted and fully secure.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">Is there a refund policy? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">For single sessions: if you are unsatisfied after the session for any reason, contact me within 48 hours and I will issue a full refund — no questions asked. For monthly subscriptions: the current month's payment is non-refundable after the first session has taken place, but future charges stop immediately upon cancellation.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">How is the Torch Bearer lifetime plan structured? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The Torch Bearer is a one-time payment that grants you unlimited access to all services, all future programs, and a dedicated direct line of communication — permanently. It is designed for those who recognize that their transformation is a lifelong project and wish to invest accordingly. Payment plans are available for the Torch Bearer — contact me to discuss.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">I genuinely cannot afford these rates. Is there any option for me? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. I keep a small number of reduced-rate and sliding-scale spots available for people facing genuine financial hardship. This is not charity — it is my recognition that the people who need this work most are sometimes the least able to pay for it. Contact me directly and let's have an honest conversation about what is possible.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUARANTEE ── -->
+<section class="section section-alt">
+  <div class="section-inner-sm" style="text-align:center;">
+    <div class="reveal">
+      <div style="width:80px;height:80px;border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold);">✦</div>
+      <p class="label" style="justify-content:center;">My Commitment</p>
+      <h2>The <em>Promise</em></h2>
+      <p style="color:var(--cream-dim);max-width:600px;margin:1.5rem auto;font-size:1.05rem;line-height:1.85;">
+        I will never take your money for work I do not believe I can do. I will never tell you what you want to hear at the expense of what you need to hear. And I will never disappear on you in the middle of your darkness.
+      </p>
+      <p style="color:var(--cream-dim);max-width:600px;margin:0 auto 2.5rem;font-size:1.05rem;line-height:1.85;">
+        This is my single promise: I will show up, fully, for as long as you are showing up for yourself.
+      </p>
+      <p style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;">— Cyrus Nash</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="reveal">
+    <h2>Start with a <em>Free</em> Conversation</h2>
+    <p>Not sure where you fit? Talk to me first. 30 minutes, no charge, no obligation. Just honesty about where you are and what you need.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn btn-gold btn-lg">Book Free Consultation</a>
+      <a href="services.html" class="btn btn-outline btn-lg">Explore All Services</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand-name">Light in the Dark Solutions</div>
+      <p>A sanctuary for those who are ready to reclaim their sovereignty, rediscover their light, and build a life worth living — on their own terms.</p>
+      <a href="contact.html" class="btn btn-outline btn-sm">Begin Your Journey →</a>
+    </div>
+    <div class="footer-col"><h4>Navigate</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li><li><a href="blog.html">Articles</a></li>
+      <li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html#soul-mapping">Soul Mapping</a></li>
+      <li><a href="services.html#sovereign-path">Sovereign Path</a></li>
+      <li><a href="services.html#crisis-light">Crisis Light</a></li>
+      <li><a href="services.html#life-architecture">Life Architecture</a></li>
+      <li><a href="services.html#group">Group Circle</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul>
+      <li><a href="resources.html#downloads">Free Guides</a></li>
+      <li><a href="resources.html#newsletter">Newsletter</a></li>
+      <li><a href="blog.html">Essays</a></li>
+      <li><a href="about.html#life-project">L.I.F.E. Project</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Cyrus Nash · Light in the Dark Solutions · Athens, Greece</span>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
