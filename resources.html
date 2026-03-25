@@ -118,8 +118,8 @@
       <div class="reveal reveal-delay-1">
         <div style="background:var(--bg3);border:1px solid var(--border);border-top:3px solid var(--gold);padding:3rem;">
           <p style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.25em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:2rem;">Subscribe to Letters of Light</p>
-          <!-- Replace YOUR_FORM_ID with your Formspree or Mailchimp endpoint -->
-          <form id="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleNewsletter(event)">
+          <!-- Replace xzdkpyol with your Formspree or Mailchimp endpoint -->
+          <form id="newsletter-form" action="https://formspree.io/f/xzdkpyol" method="POST" onsubmit="handleNewsletter(event)">
             <input type="hidden" name="subject" value="Newsletter Signup">
             <div class="form-group">
               <label>Your Name</label>
@@ -241,7 +241,7 @@
 <script>
 function handleNewsletter(e) {
   const action = e.target.getAttribute('action');
-  if (!action || action.includes('YOUR_FORM_ID')) {
+  if (!action || action.includes('xzdkpyol')) {
     e.preventDefault();
     document.getElementById('newsletter-success').style.display = 'block';
     e.target.reset();
